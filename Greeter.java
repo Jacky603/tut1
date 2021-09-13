@@ -17,9 +17,19 @@ public class Greeter {
   }
 
   public static void main(String[] args) {
-    String language = args[0];
-    String country = args[1];
-    String name = args[2];
+    try{
+      if (args != 0){
+        String language = args[0];
+        String country = args[1];
+        String name = args[2];
+      }
+      else {
+        throw Expection;
+      }
+    }catch (IllegalArgumentExpection e){
+      System.err.println(e.getMessage())
+    }
+
     Greeter greeter = new Greeter(language, country, name);
     System.out.println(greeter.sayHello());
   }
